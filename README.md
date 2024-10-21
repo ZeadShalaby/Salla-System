@@ -1,12 +1,12 @@
 <br/>
 <p align="center">
   <a href="https://github.com/ZeadShalaby/Gadwalls-System">
-          <img src="https://imgur.com/hcmFk7u.png?w=1600" alt="Logo" width="490" height="380">
+          <img src="https://imgur.com/HQwVdSJ.png?w=1600" alt="Logo" width="490" height="380">
     
   </a>
 
-<h3 align="center"> Gadwalls System </h3>
-<h3 align="center"> it's a project use different package like barryvdh/laravel-dompdf , endroid/qr-code </h3>
+<h3 align="center"> Salla System </h3>
+<h3 align="center"> </h3>
 
   <p align="center">
      Project Gadwalls System
@@ -14,7 +14,7 @@
     <br/>
   </p>
   
-![Forks](https://img.shields.io/github/forks/ZeadShalaby/Gadwalls-System?style=social) ![Issues](https://img.shields.io/github/issues/ZeadShalaby/Gadwalls-System) ![License](https://img.shields.io/github/license/ZeadShalaby/Gadwalls-System)
+![Forks](https://img.shields.io/github/forks/ZeadShalaby/Salla-System?style=social) ![Issues](https://img.shields.io/github/issues/ZeadShalaby/Salla-System) ![License](https://img.shields.io/github/license/ZeadShalaby/Salla-System)
 
 ## Table Of Contents
 
@@ -38,7 +38,7 @@
 ## About The Project
 it's a projects coded in Backend Laravel & blade .
 Describe of the Project:
-Gadwalls is a user-friendly cashier application for retail stores and restaurants. It streamlines sales and purchases by offering multiple payment options, generating invoices, and managing inventory in real-time. With sales reporting and customer management features, it helps businesses enhance efficiency and improve customer service.
+Salla is an all-in-one e-commerce platform that helps businesses create, manage, and grow online stores with ease. It offers Arabic language support, region-specific payment, and shipping options, catering primarily to the Middle Eastern and North African markets. No technical expertise is required to get started.
 
 ## Built With
 
