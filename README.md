@@ -1,7 +1,7 @@
 <br/>
 <p align="center">
   <a href="https://github.com/ZeadShalaby/Gadwalls-System">
-          <img src="https://imgur.com/HQwVdSJ.png?w=1600" alt="Logo" width="490" height="320">
+          <img src="https://imgur.com/HQwVdSJ.png?w=1600" alt="Logo" width="510" height="280">
     
   </a>
 
