@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->unsignedBigInteger('user_id');
             $table->index('user_id');
             $table->unsignedBigInteger('product_id');
-            $table->index('book_id');
+            $table->index('product_id');
             $table->unsignedBigInteger('star')->nullable();
             $table->index('star');
             $table->timestamps();

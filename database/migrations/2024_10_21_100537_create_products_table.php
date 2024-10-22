@@ -15,6 +15,7 @@ return new class extends Migration {
             $table->string('name');
             $table->decimal('price', 10, 2);
             $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('discount_id');
             $table->integer('quantity')->default(1);
             $table->timestamp('expire_at')->nullable();
