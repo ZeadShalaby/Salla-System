@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\RoleEnums;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,7 +17,7 @@ return new class extends Migration {
             $table->string('email')->unique();
             $table->string('password');
             $table->string('phone')->nullable(); // Corrected from strinh to string
-            $table->string('role')->default('2');
+            $table->string('role')->default(RoleEnums::User->value);
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
         });
