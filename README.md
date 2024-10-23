@@ -55,6 +55,12 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+* npm
+
+```sh
+npm install npm@latest -g
+```
+
 * laravel
 
 ```sh
@@ -69,13 +75,13 @@ Clone the project
 
 ```bash
 
-https://github.com/ZeadShalaby/Certificate-System
+https://github.com/ZeadShalaby/Salla-System
 ```
 
 Go to the project directory
 
 ```bash
-  cd Gadwalls-System
+  cd Salla-System
 ```
 
 Install dependencies
@@ -105,7 +111,7 @@ Install dependencies
      DB_CONNECTION=mysql
      DB_HOST=127.0.0.1
      DB_PORT=3306
-     DB_DATABASE=GadwallsDB
+     DB_DATABASE=SallaDB
      DB_USERNAME=root
      DB_PASSWORD=
      ```
@@ -148,6 +154,20 @@ go to the following route
 ```
     http://127.0.0.1:8000/
 ```
+
+
+📌 Frontend
+
+```bash
+      npm start  || npm run serve
+```
+
+go to the following route
+
+```
+http://localhost:8080/
+
+```
  
 
 ## Contributing
@@ -155,7 +175,7 @@ go to the following route
 Any contributions you make are **greatly appreciated**.
 
 * If you have suggestions for adding or removing projects, feel free
-  to [open an issue](https://github.com/ZeadShalaby/Gadwalls-System/issues/new) to discuss it, or directly
+  to [open an issue](https://github.com/ZeadShalaby/Salla-System/issues/new) to discuss it, or directly
   create a pull request after you edit the *README.md* file with necessary changes.
 * Please make sure you check your spelling and grammar.
 * Create individual PR for each suggestion.
