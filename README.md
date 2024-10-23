@@ -6,7 +6,7 @@
   </a>
 
 <h3 align="center"> Salla System </h3>
-<h3 align="center"> </h3>
+<h3 align="center"> use vue inertia in laravel and spatie permission and Multi Guard , use Notfication in site and mail to client , use Different Payment Ways</h3>
 
   <p align="center">
      Project Salla System
