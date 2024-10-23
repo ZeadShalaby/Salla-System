@@ -2,7 +2,6 @@
 <p align="center">
   <a href="https://github.com/ZeadShalaby/Gadwalls-System">
           <img src="https://imgur.com/HQwVdSJ.png?w=1600" alt="Logo" width="520" height="250">
-    
   </a>
 
 <h3 align="center"> Salla System </h3>
