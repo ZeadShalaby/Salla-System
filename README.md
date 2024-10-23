@@ -9,7 +9,7 @@
 <h3 align="center"> </h3>
 
   <p align="center">
-     Project Gadwalls System
+     Project Salla System
     <br/>
     <br/>
   </p>
@@ -36,13 +36,15 @@
 </p>
 
 ## About The Project
-it's a projects coded in Backend Laravel & blade .
+it's a projects coded in Backend Laravel & Vue .
 Describe of the Project:
 Salla is an all-in-one e-commerce platform that helps businesses create, manage, and grow online stores with ease. It offers Arabic language support, region-specific payment, and shipping options, catering primarily to the Middle Eastern and North African markets. No technical expertise is required to get started.
 
 ## Built With
 
 **Server:** Apache, Laravel
+**Client:** VueJs, Bootstrap
+
 
 **Miscellaneous:** Github
 
