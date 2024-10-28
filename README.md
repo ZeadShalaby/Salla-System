@@ -2,14 +2,13 @@
 <p align="center">
   <a href="https://github.com/ZeadShalaby/Gadwalls-System">
           <img src="https://imgur.com/HQwVdSJ.png?w=1600" alt="Logo" width="520" height="250">
-    
   </a>
 
 <h3 align="center"> Salla System </h3>
-<h3 align="center"> </h3>
+<h3 align="center"> use vue inertia in laravel and spatie permission and Multi Guard , use Notification on site and mail to client, use Different Payment Ways</h3>
 
   <p align="center">
-     Project Gadwalls System
+     Project Salla System
     <br/>
     <br/>
   </p>
@@ -36,13 +35,15 @@
 </p>
 
 ## About The Project
-it's a projects coded in Backend Laravel & blade .
+it's a projects coded in Backend Laravel & Vue .
 Describe of the Project:
 Salla is an all-in-one e-commerce platform that helps businesses create, manage, and grow online stores with ease. It offers Arabic language support, region-specific payment, and shipping options, catering primarily to the Middle Eastern and North African markets. No technical expertise is required to get started.
 
 ## Built With
 
 **Server:** Apache, Laravel
+**Client:** VueJs, Bootstrap
+
 
 **Miscellaneous:** Github
 
@@ -52,6 +53,12 @@ Salla is an all-in-one e-commerce platform that helps businesses create, manage,
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+
+* npm
+
+```sh
+npm install npm@latest -g
+```
 
 * laravel
 
@@ -67,13 +74,13 @@ Clone the project
 
 ```bash
 
-https://github.com/ZeadShalaby/Certificate-System
+https://github.com/ZeadShalaby/Salla-System
 ```
 
 Go to the project directory
 
 ```bash
-  cd Gadwalls-System
+  cd Salla-System
 ```
 
 Install dependencies
@@ -103,7 +110,7 @@ Install dependencies
      DB_CONNECTION=mysql
      DB_HOST=127.0.0.1
      DB_PORT=3306
-     DB_DATABASE=GadwallsDB
+     DB_DATABASE=SallaDB
      DB_USERNAME=root
      DB_PASSWORD=
      ```
@@ -146,6 +153,20 @@ go to the following route
 ```
     http://127.0.0.1:8000/
 ```
+
+
+📌 Frontend
+
+```bash
+      npm start  || npm run serve
+```
+
+go to the following route
+
+```
+http://localhost:8080/
+
+```
  
 
 ## Contributing
@@ -153,7 +174,7 @@ go to the following route
 Any contributions you make are **greatly appreciated**.
 
 * If you have suggestions for adding or removing projects, feel free
-  to [open an issue](https://github.com/ZeadShalaby/Gadwalls-System/issues/new) to discuss it, or directly
+  to [open an issue](https://github.com/ZeadShalaby/Salla-System/issues/new) to discuss it, or directly
   create a pull request after you edit the *README.md* file with necessary changes.
 * Please make sure you check your spelling and grammar.
 * Create individual PR for each suggestion.
