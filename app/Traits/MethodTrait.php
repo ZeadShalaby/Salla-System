@@ -1,27 +1,21 @@
 <?php
 namespace App\Traits;
 
-use App\Models\Limits;
-use App\Traits\ResponseTrait;
+use App\Models\User;
+use Illuminate\Http\Request;
+use App\Notifications\SuccessNotify;
+use Illuminate\Support\Facades\Notification;
 
 trait MethodTrait
 {
-    use ResponseTrait;
 
-    // todo check users expired | ^ //
-    protected function isExpired($userid)
+    // ?todo send notification
+
+    protected function successNotification(User $user, $type, $msg)
     {
-        try {
-            $limit = Limits::where('limitable_id', $userid)->value('expire');
-            if (isset($limit) && $limit != 0) {
-                return false;
-            }
-            return true;
-        } catch (\Exception $e) {
-
-            return $this->returnError('', $e->getMessage());
-        }
-
+        return Notification::send($user, new SuccessNotify($type, $msg));
     }
+
+
 
 }

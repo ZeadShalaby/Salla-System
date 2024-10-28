@@ -4,7 +4,9 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Media;
+use App\Enums\RoleEnums;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Hash;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -13,6 +15,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable implements JWTSubject
 {
     use HasApiTokens, HasFactory, Notifiable;
+
 
     /**
      * The attributes that are mass assignable.
@@ -34,9 +37,30 @@ class User extends Authenticatable implements JWTSubject
      */
     protected $hidden = [
         'password',
-        'update_at',
-        'create_at',
+        'updated_at',
+        'created_at',
+        'email_verified_at'
     ];
+    /**
+     * Automatically hash the password when setting it.
+     */
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = Hash::make($value);
+    }
+
+
+    public function getRoleName()
+    {
+        $roles = [
+            RoleEnums::Super->value => 'Super',
+            RoleEnums::Admin->value => 'Admin',
+            RoleEnums::Owner->value => 'Owner',
+            RoleEnums::User->value => 'User',
+        ];
+
+        return $roles[$this->role] ?? 'Unknown';
+    }
 
     /**
      * The attributes that should be cast.

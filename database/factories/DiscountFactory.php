@@ -17,7 +17,8 @@ class DiscountFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "discount" => $this->faker->numberBetween(1, 100), //? persentage 
+            "expire_at" => $this->faker->optional()->dateTimeBetween('now', '+2 years'),
         ];
     }
 }

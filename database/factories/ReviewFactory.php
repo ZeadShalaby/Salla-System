@@ -2,12 +2,14 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class PaymenttFactory extends Factory
+class ReviewFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +19,10 @@ class PaymenttFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'comment' => $this->faker->sentence(),
+            'user_id' => User::factory(),
+            'product_id' => Product::factory(),
+            'star' => $this->faker->numberBetween(1, 5),
         ];
     }
 }

@@ -4,7 +4,6 @@ namespace App\Http;
 
 use App\Http\Middleware\verified;
 use App\Http\Middleware\AssignGuard;
-use App\Http\Middleware\AssignGuardAdmin;
 use App\Http\Middleware\LocaleMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -68,7 +67,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => verified::class,
         'auth.guard' => AssignGuard::class,
-        'auth.guard.admin' => AssignGuardAdmin::class,
         'local' => LocaleMiddleware::class,
     ];
 }

@@ -11,7 +11,7 @@ class RequestEditUser extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class RequestEditUser extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email,' . auth()->user()->id,
+            'password' => 'nullable|min:8|max:20|confirmed',
+            'phone' => 'required|string|max:12|regex:/^01[0125][0-9]{8}$/',
         ];
     }
 }

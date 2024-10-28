@@ -43,25 +43,6 @@ trait ImageTrait
     }
 
 
-    // ?todo add new media 
-    protected function AddCVmedia($info, $medias)
-    {
-        $user_media = Media::where('mediaable_type', 'User')->where('mediaable_id', auth()->user()->id)->first();
-        $media = $user_media->media;
-        $medias_name = pathinfo($medias, PATHINFO_FILENAME);
-        $filePath = public_path('pdfs/' . $user_media->cv);
-        //? check if file exists
-        if (Storage::disk('public')->exists($filePath)) {
-            //? delete old file
-            Storage::disk('public')->delete($filePath);
-        }
-        $user_media->delete();
-        $test = $info->media()->create([
-            'media' => $media,
-            'mediacv' => "/api/cv-users/" . $medias_name,
-            'cv' => $medias
-        ]);
-    }
 
     // ?todo save pdf
     public function savePdf($file, $folder)

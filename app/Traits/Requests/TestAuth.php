@@ -8,46 +8,25 @@ trait TestAuth
 
 
   // ?todo rules of login for users
-  protected function rulesLogin($field)
+  protected function rulesLogin($requestField)
   {
-    if ($field == "email") {
-      return [
-        "field" => "required|exists:users,email",
-        "password" => "required"
-      ];
-    } else {
-      return [
-        "field" => "required|exists:users,name",
-        "password" => "required"
-      ];
-    }
+    return [
+      'login' => 'required|string|exists:users,' . $requestField,
+      'password' => 'required|min:8|max:20',
+    ];
   }
 
   // ?todo rules of users registers
   protected function rulesRegist()
   {
     return [
-      "name" => "required|unique:users,name|min:4|max:20",
-      "email" => "required|email|unique:users,email",
-      "password" => "required|min:8",
-    ];
-  }
-  // ?todo rules of store posts 
-  protected function rulesContacts()
-  {
-    return [
-      'message' => 'required|min:5|max:250',
+      'name' => 'required|string|max:255',
+      'email' => 'required|string|email|max:255|unique:users,email,',
+      'password' => 'nullable|min:8|max:20|confirmed',
+      'phone' => 'required|string|max:12|regex:/^01[0125][0-9]{8}$/',
     ];
   }
 
-  // ?todo rules of Verify code of user
-  protected function ruleCodeVerify()
-  {
-    return [
-      'code' => 'required|exists:users,code',
-      'email' => 'required|email|exists:users,email'
-    ];
-  }
 
   // ?todo rules of Change pass for users
   protected function ruleChangePass()
@@ -58,68 +37,17 @@ trait TestAuth
     ];
   }
 
-  // ?todo rules of send messages for chatgpt4 
-  protected function rulesChatgpt4()
-  {
-    return [
-      'message' => 'required|min:5|max:550',
-    ];
-  }
-
-  // ?todo rules of send pdf file in python algorithm 
-  protected function rulesPythonPdf()
-  {
-    return [
-      'pdf' => 'required|max:2048,mimes:pdf,ppt,doc,docx',//? Corrected validation for document files 
-    ];
-  }
-
-  protected function rulesStoreReusme()
-  {
-
-    return [
-      'template_name' => 'nullable|string|max:255',
-      'firstname' => 'nullable|string|max:255',
-      'lastname' => 'nullable|string|max:255',
-      'position' => 'nullable|string|max:255',
-      'email' => 'nullable|email|max:255',
-      'phone' => 'nullable|string|max:20',
-      'experience' => 'nullable|string|max:255',
-      'location' => 'nullable|string|max:255',
-      'about' => 'nullable|string',
-      'country' => 'nullable|string|max:255',
-      'city' => 'nullable|string|max:255',
-      'skills' => 'nullable|array',
-      'social' => 'nullable|array',
-    ];
-
-  }
 
   // ?todo rules update users
-  protected function rulesUpdateUsers($userId)
+  protected function rulesUpdateUsers()
   {
     return [
       'name' => 'required|min:4|max:20',
-      'email' => [
-        'required',
-        'email',
-        Rule::unique('users', 'email')->ignore($userId), // استثناء البريد الإلكتروني الحالي
-      ],
+      'email' => 'required|string|email|max:255|unique:users,email,' . auth()->user()->id,
       'phone' => 'required|numeric|digits:10',
-      'password' => 'sometimes|min:8',  // "sometimes" تعني أن التحقق من الحقل يكون فقط إذا كان موجوداً في الطلب
+      'password' => 'sometimes|min:8',
     ];
 
-  }
-
-  // ?todo rules update users
-  protected function rulessocialusers()
-  {
-    return [
-      'name' => 'required|min:4|max:20',
-      "phone" => "required|numeric|digits:10",
-      'birthday' => "required",
-      'gender' => "required",
-    ];
   }
 
 
@@ -140,41 +68,5 @@ trait TestAuth
       'comment' => 'required|min:5|max:200',
     ];
   }
-
-
-  // ?todo rules store comments 
-  protected function rulessms()
-  {
-    return [
-      'country_code' => 'required|integer|digits_between:2,3',
-      'phone' => 'required|numeric|digits:10|exists:users,phone'
-    ];
-  }
-
-  // ?todo rules of type for users ?todo send mail
-  protected function rulestype()
-  {
-    return [
-      "type" => "required|max:12",
-      "message" => "required|min:12"
-    ];
-  }
-
-  // ?todo rules of type for send cv to company 
-  protected function rulesSendCv()
-  {
-    return [
-      "email" => "required|email|exists:companys,email",
-      "message" => "nullable|min:12||max:350",
-    ];
-  }
-
-
-
-
-
-
-
-
 
 }

@@ -20,9 +20,6 @@
 
 <body>
     <div id="app">
-        <h1>
-            ss
-        </h1>
         <main class="py-4">
             @yield('content')
         </main>

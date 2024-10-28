@@ -1,8 +1,7 @@
 <template>
     <div class="container">
-        <nav>
+        <!---- Navigation Component --->
             <nav-component></nav-component>
-        </nav>
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -22,6 +21,9 @@
     <main>
         <router-view/>
     </main>
+<footer class="footer">
+  <footer-component></footer-component>  
+</footer>
 </template>
 
 <script>

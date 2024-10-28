@@ -23,8 +23,9 @@ class AssignGuard extends BaseMiddleware
     {
         if ($guard != null) {
             auth()->shouldUse($guard); //?shoud you user guard / table
-            $token = $request->auth_token;
-            if ($request->is('api/chat/PDF')) {
+            // $token = $request->token;
+            $token = $request->header('Authorization');
+            if ($request->is('api/users/chat/PDF')) {
                 try {
                     if ($token) {
                         $request->headers->set('Authorization', 'Bearer ' . $token, true);

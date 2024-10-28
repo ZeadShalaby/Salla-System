@@ -2,14 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
-use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class RevieweFactory extends Factory
+class PaymentFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,10 +17,9 @@ class RevieweFactory extends Factory
     public function definition(): array
     {
         return [
-            'comment' => $this->faker->sentence(),
-            'user_id' => User::factory(),
-            'product_id' => Product::factory(),
-            'star' => $this->faker->numberBetween(1, 5),
+            'payment_method' => $this->faker->randomElement(['credit card', 'PayPal', 'bank transfer', 'cash']),
+            'status' => $this->faker->randomElement(['pending', 'completed', 'failed']),
+            'transaction_id' => $this->faker->unique()->regexify('[A-Za-z0-9]{20}'),
         ];
     }
 }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Media;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Eloquent\Model;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
@@ -46,6 +47,16 @@ class Admin extends Model implements JWTSubject
         'email_verified_at' => 'datetime',
     ];
 
+
+    /**
+     * Automatically hash the password when setting it.
+     */
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = Hash::make($value);
+    }
+
+
     /**
      * The attributes that are mass assignable.
      *
@@ -61,6 +72,10 @@ class Admin extends Model implements JWTSubject
     {
         return $this->morphOne(Media::class, 'mediaable');
     }
+
+
+
+
 
 
 
