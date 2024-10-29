@@ -1,5 +1,7 @@
 <?php
 
+use PayMob\Facades\PayMob;
+use PayMob\PayMobServiceProvider;
 use Illuminate\Support\Facades\Facade;
 use Srmklive\PayPal\Providers\PayPalServiceProvider;
 
@@ -196,6 +198,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         PayPalServiceProvider::class,
+        PayMobServiceProvider::class,
+
     ],
 
     /*
@@ -210,6 +214,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        'PayMob' => PayMob::class,
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 

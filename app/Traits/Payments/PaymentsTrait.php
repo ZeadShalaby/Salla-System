@@ -2,9 +2,9 @@
 namespace App\Traits\Payments;
 
 use App\Models\User;
-use App\Models\Orders;
+use App\Models\Order;
+use App\Models\Payment;
 use App\Models\Product;
-use App\Models\Payments;
 
 trait PaymentsTrait
 {
@@ -36,7 +36,7 @@ trait PaymentsTrait
   // ?todo saved process payments
   public function CreatePayments($data)
   {
-    $payment = Payments::create([
+    $payment = Payment::create([
       'payment_method' => $data->InvoiceTransactions[1]->PaymentGateway,
       'status' => $data->InvoiceStatus,
       'transaction_id' => $data->InvoiceTransactions[1]->TransactionId,
@@ -49,7 +49,7 @@ trait PaymentsTrait
   // ?todo saved process orders
   public function CreateOrders($user, $offer, $paymentsId)
   {
-    Orders::create([
+    Order::create([
       'order_num' => 1,
       'total_amount' => 1500,
       'user_id' => $user->id,

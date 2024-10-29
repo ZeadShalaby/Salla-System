@@ -46,9 +46,5 @@ class PayPalController extends Controller
              * todo Success Operation */
             return $this->returnSuccessMessage('Payment Success', 200);
         }
-
-        /** 
-         * todo Cancel Operation */
-        return response()->json('Payment Cancelled', 402);
     }
 }
