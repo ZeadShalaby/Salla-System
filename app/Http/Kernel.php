@@ -4,6 +4,7 @@ namespace App\Http;
 
 use App\Http\Middleware\verified;
 use App\Http\Middleware\AssignGuard;
+use App\Http\Middleware\CheckPolicy;
 use App\Http\Middleware\LocaleMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -68,5 +69,6 @@ class Kernel extends HttpKernel
         'verified' => verified::class,
         'auth.guard' => AssignGuard::class,
         'local' => LocaleMiddleware::class,
+        'policy' => CheckPolicy::class,
     ];
 }
