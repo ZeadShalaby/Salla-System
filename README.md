@@ -28,12 +28,8 @@
 * [Contributing](#contributing)
 * [Authors](#authors)
 
-
 <br>
-
-
 </p>
-
 ## About The Project
 it's a projects coded in Backend Laravel & Vue .
 Describe of the Project:
